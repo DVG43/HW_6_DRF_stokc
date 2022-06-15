@@ -38,9 +38,8 @@ class StockSerializer(serializers.ModelSerializer):
         # с помощью списка positions
         for posit in validated_data('positions'):
             stockProduct = StockProduct.objects.update_or_create(
-                       stock=stock,
-                       defaults={'product': posit['product'],
-                        'quantity': posit['quantity'],
+                       stock=stock, product=posit['product'],
+                       defaults={'quantity': posit['quantity'],
                         'price': posit['price']},
                           )
         return stock
@@ -57,9 +56,8 @@ class StockSerializer(serializers.ModelSerializer):
         # с помощью списка positions
         for posit in validated_data('positions'):
             stockProduct = StockProduct.objects.update_or_create(
-                       stock=stock,
-                       defaults={'product': posit['product'],
-                        'quantity': posit['quantity'],
+                       stock=stock, product=posit['product'],
+                       defaults={'quantity': posit['quantity'],
                         'price': posit['price']},
                           )
         return stock

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-
+    'django_filters',   # создано мной для примения фильтров
     'logistic',
 ]
 
@@ -129,3 +129,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# создано мной для примения фильтров
+REST_FRAMEWORK = {
+
+    'DEFAULT_FILTER_BACKEND': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ]
+    }
