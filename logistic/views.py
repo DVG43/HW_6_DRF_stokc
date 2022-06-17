@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-import django_filters.rest_framework
+#import django_filters.rest_framework
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.filters import SearchFilter
@@ -12,8 +12,8 @@ class ProductViewSet(ModelViewSet):
     serializer_class = ProductSerializer
     # при необходимости добавьте параметры фильтрации
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_filds = ['title']
-    search_fild = ['description']
+    filterset_fields = ['title']
+    search_fields = ['title', 'description']
     pagination_class = LimitOffsetPagination
 
 class StockViewSet(ModelViewSet):
@@ -21,5 +21,5 @@ class StockViewSet(ModelViewSet):
     serializer_class = StockSerializer
     # при необходимости добавьте параметры фильтрации
     filter_backends = [DjangoFilterBackend]
-    filterset_filds = ['products']
+    filterset_fields = ['products']
     pagination_class = LimitOffsetPagination
