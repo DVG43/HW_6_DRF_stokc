@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'django_filters',   # создано мной для примения фильтров
+    # 'django_filters',   # создано мной для примения фильтров
     'logistic',
 ]
 
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'stocks_products.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stokcs_DB',
-        'USER': 'py48dmitriig',
-        'PASSWORD': 'luch1624',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'dbstock',
+        # 'USER': 'py48dmitriig',
+        # 'PASSWORD': 'luch1624',
     }
 }
 
@@ -134,8 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # создано мной для примения фильтров
 REST_FRAMEWORK = {
-
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3,
     }
