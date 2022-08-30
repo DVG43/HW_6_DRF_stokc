@@ -1,4 +1,4 @@
-FROM Python:3.10
+FROM python:3.10
 
 COPY . /src
 COPY . /requirements.txt/src/requirements.txt
