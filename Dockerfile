@@ -1,10 +1,11 @@
 FROM python:3.10
 
-COPY . /src
+EXPOSE 6060
+
 COPY . /requirements.txt/src/requirements.txt
 RUN pip3 install --no-cache-dir --upgrade -r /src/requirements.txt
 
-EXPOSE 6060
+COPY . /src
 
 WORKDIR src
 
