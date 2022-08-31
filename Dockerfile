@@ -2,7 +2,7 @@ FROM python:3.10
 
 COPY . /src
 COPY . /requirements.txt/src/requirements.txt
-RUN pip3 install --no-cach-dir --upgrade -r /src/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade -r /src/requirements.txt
 
 EXPOSE 6060
 
